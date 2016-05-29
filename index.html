@@ -1,6 +1,24 @@
 <html>
 
 	<head>
+
+		<title>Click Cats</title>
+
+		<style>
+
+		.container{
+
+			display: flex;
+		}
+
+		#cat1 img, #cat2 img{
+
+			width:300px;
+			height:300px;
+			margin-right:10px;
+		}
+
+		</style>
 	
 
 	</head>
@@ -9,8 +27,44 @@
 
 		<h2>click number: 0</h2>
 
-		<img src="cat.jpg" alt="cat">
-		
+		<div class="container">
+
+			<div id="cat1">
+				
+                 <img  src="cat1.jpg" alt="cat 1">
+
+			</div>
+
+			<div id="cat2">
+				 <img  src="cat2.jpg" alt="Cat 2">
+
+				
+			</div>
+
+	
+
+		</div>
+		<!-- container -->
+
+
+		<script>
+				   var cat1 = document.querySelector("#cat1");
+				   console.log(cat1);
+				   var name_cat1 = document.createElement("div");
+				   name_cat1.innerHTML = "CAT ONE";
+				   cat1.appendChild(name_cat1)
+
+
+      var cat2 = document.querySelector("#cat2");
+				   console.log(cat2);
+				   var name_cat2 = document.createElement("div");
+				   name_cat2.innerHTML = "CAT TWO";
+				   cat2.appendChild(name_cat2)
+
+
+
+		</script>
+
 
 
 	</body>
