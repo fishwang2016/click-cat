@@ -3,8 +3,14 @@
     <title>Click Cats</title>
 
     <style>
-        .container {
+
+    body{
+        width:800px;
+        margin:0 auto;
+    }
+    #container {
             display: flex;
+            width:800px;
         }
         #cat1 img,
         #cat2 img {
@@ -18,52 +24,46 @@
 <body>
 
     <h2>click number: <span id = "clicks"></span></h2>
-    <div class="container">
-       <div id="cat1">
-            <img src="cat1.jpg" alt="cat 1">
-        </div>
-        <div id="cat2">
-            <img src="cat2.jpg" alt="Cat 2">
-        </div>
+    <div id="container">
+
     </div>
     <!-- container end-->
 
     <script>
-        var cat1 = document.querySelector("#cat1");
-        console.log(cat1);
-        var name_cat1 = document.createElement("div");
-        name_cat1.innerHTML = "CAT ONE";
-        cat1.appendChild(name_cat1)
+    // 5 cats
+    var container = document.getElementById("container")
+    for (var i =1;i <3; i++){
 
 
-        var cat2 = document.querySelector("#cat2");
-        console.log(cat2);
-        var name_cat2 = document.createElement("div");
-        name_cat2.innerHTML = "CAT TWO";
-        cat2.appendChild(name_cat2);
+        var catImg = document.createElement("img");
+            catImg.src = "cat"+i+".jpg";
+            catImg.style.width = "300px";
 
-        var clicks = 0;
+        var catContainer =document.createElement("div");
+        catContainer.classList.add("catContainer");
+        catContainer.style.width ="350px";
+        catContainer.style.height ="250px";
+        catContainer.style.marginRight ="10px";
+        catContainer.innerHTML = "CAT"+i;
 
-        document.getElementById("cat1").addEventListener("click", function() {
-            clicks = clicks + 1;
-            console.log(clicks);
-            update_clicks(clicks);
-        })
+        var clicks = document.createElement("span");
+        var c = 0;
+        clicks.innerHTML = "-- with   Click Numbers: "+c;
+       
+        catContainer.appendChild(clicks);
+        catContainer.appendChild(catImg);
+        container.appendChild(catContainer);
 
-        document.getElementById("cat2").addEventListener("click", function() {
-            clicks = clicks + 1;
-            console.log(clicks);
-            update_clicks(clicks);
-        })
+        catImg.addEventListener("click",(function(numcopy,clickcopy){
+            return function(){
+            numcopy=numcopy+1;
+            clickcopy.innerHTML = "-- with   Click Numbers: "+numcopy;
+            };
+         
+        })(c,clicks));
 
-        function update_clicks(clicks){
-
-        document.getElementById("clicks").innerHTML=clicks;
-
-        }
-
-        document.getElementById("clicks").innerHTML=clicks;
-
+    }
+ 
 
     </script>
 </body>
