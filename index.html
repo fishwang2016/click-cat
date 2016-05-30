@@ -1,85 +1,71 @@
 <html>
+<head>
+    <title>Click Cats</title>
 
-	<head>
+    <style>
+        .container {
+            display: flex;
+        }
+        #cat1 img,
+        #cat2 img {
+            width: 300px;
+            height: 300px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
 
-		<title>Click Cats</title>
+<body>
 
-		<style>
+    <h2>click number: <span id = "clicks"></span></h2>
+    <div class="container">
+       <div id="cat1">
+            <img src="cat1.jpg" alt="cat 1">
+        </div>
+        <div id="cat2">
+            <img src="cat2.jpg" alt="Cat 2">
+        </div>
+    </div>
+    <!-- container end-->
 
-		.container{
-
-			display: flex;
-		}
-
-		#cat1 img, #cat2 img{
-
-			width:300px;
-			height:300px;
-			margin-right:10px;
-		}
-
-		</style>
-	
-
-	</head>
-
-	<body>
-
-		<h2>click number: <span id = "clicks"></span></h2>
-
-		<div class="container">
-
-			<div id="cat1">
-				
-                 <img  src="cat1.jpg" alt="cat 1">
-
-			</div>
-
-			<div id="cat2">
-				 <img  src="cat2.jpg" alt="Cat 2">
-
-				
-			</div>
-
-	
-
-		</div>
-		<!-- container end-->
+    <script>
+        var cat1 = document.querySelector("#cat1");
+        console.log(cat1);
+        var name_cat1 = document.createElement("div");
+        name_cat1.innerHTML = "CAT ONE";
+        cat1.appendChild(name_cat1)
 
 
-		<script>
-				   var cat1 = document.querySelector("#cat1");
-				   console.log(cat1);
-				   var name_cat1 = document.createElement("div");
-				   name_cat1.innerHTML = "CAT ONE";
-				   cat1.appendChild(name_cat1)
+        var cat2 = document.querySelector("#cat2");
+        console.log(cat2);
+        var name_cat2 = document.createElement("div");
+        name_cat2.innerHTML = "CAT TWO";
+        cat2.appendChild(name_cat2);
+
+        var clicks = 0;
+
+        document.getElementById("cat1").addEventListener("click", function() {
+            clicks = clicks + 1;
+            console.log(clicks);
+            update_clicks(clicks);
+        })
+
+        document.getElementById("cat2").addEventListener("click", function() {
+            clicks = clicks + 1;
+            console.log(clicks);
+            update_clicks(clicks);
+        })
+
+        function update_clicks(clicks){
+
+        document.getElementById("clicks").innerHTML=clicks;
+
+        }
+
+        document.getElementById("clicks").innerHTML=clicks;
 
 
-      			   var cat2 = document.querySelector("#cat2");
-				   console.log(cat2);
-				   var name_cat2 = document.createElement("div");
-				   name_cat2.innerHTML = "CAT TWO";
-				   cat2.appendChild(name_cat2);
-
-				   var clicks =0;
-
-				   cat1.addEventListner("click",function(){
-
-				   	clicks = clicks +1;
-
-				   	console.log(clicks);
-				   })
-
-
-
-
-
-		</script>
-
-
-
-	</body>
-
-
+    </script>
+</body>
 
 </html>
