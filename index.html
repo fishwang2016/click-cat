@@ -8,17 +8,17 @@
         width:800px;
         margin:0 auto;
     }
+
     #container {
             display: flex;
             width:800px;
+            flex-wrap:wrap;
         }
-        #cat1 img,
-        #cat2 img {
-            width: 300px;
-            height: 300px;
-            margin-right: 10px;
-        }
+
+        
     </style>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
@@ -32,7 +32,7 @@
     <script>
     // 5 cats
     var container = document.getElementById("container")
-    for (var i =1;i <3; i++){
+    for (var i =1;i <=5; i++){
 
 
         var catImg = document.createElement("img");
