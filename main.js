@@ -18,7 +18,7 @@ $(function(){
 				   			console.log(i);
 					   		   model.add({
 					   		   	cat: "CAT"+i,
-					   		   	url: "cat"+i+'jpg',
+					   		   	url: "cat"+i+'.jpg',
 					   		   	clicks: 0
 				    		     });
 			             	}
@@ -69,7 +69,7 @@ $(function(){
 
 		   	init: function(){
 
-		   		this.catList = $("#catcontainer");
+		   		this.catList = $(".container");
 		   		view.render();
 
 		   	},
@@ -77,8 +77,19 @@ $(function(){
 		   	render:function(){
 
 		   		var htmlStr =" ";
+		   		var catcontainer;
+		   		var catCaption ;
+
+
 		   		octopus.getCats().forEach(function(cat){
-		   			htmlStr = htmlStr + cat.url;
+
+		   			   catCaption = cat.cat +'clicks:' + cat.clicks;
+
+
+
+		   			    catcontainer = '<div class="catcontainer"> '+ catCaption+'<img src="' +cat.url+ '"' + 'alt="'+cat.cat+'">'+  ' </div>';
+
+		   			    htmlStr=htmlStr+ catcontainer;
 
 		   		});
 
