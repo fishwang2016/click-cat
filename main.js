@@ -85,8 +85,6 @@ $(function(){
 
 		   			   catCaption = cat.cat +'clicks:' + cat.clicks;
 
-
-
 		   			    catcontainer = '<div class="catcontainer"> '+ catCaption+'<img src="' +cat.url+ '"' + 'alt="'+cat.cat+'">'+  ' </div>';
 
 		   			    htmlStr=htmlStr+ catcontainer;
