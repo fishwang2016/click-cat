@@ -1,5 +1,3 @@
-
-
 $(function(){
    console.log("This is a test message on successfully conneting the js file.");
 
@@ -53,6 +51,13 @@ $(function(){
 		   		return model.getAllCats() ;
 		        	} ,
 
+		    getCurrentCat: funcion(catcopy){ 
+		    	   cat: catcopy.cat,
+		    	   url: catcopy.url,
+		    	   clicks:catcopy.clicks
+
+		              },
+
 		   	init: function(){
 
 		   		console.log("initializing octopus ...")
@@ -85,9 +90,19 @@ $(function(){
 
 		   			   catCaption = cat.cat +'clicks:' + cat.clicks;
 
-		   			    catcontainer = '<div class="catcontainer"> '+ catCaption+'<img src="' +cat.url+ '"' + 'alt="'+cat.cat+'">'+  ' </div>';
+		   			    catcontainer = '<div class="catcontainer"> '+ catCaption+'<img  src="' +cat.url+ '"' + 'alt="'+cat.cat+'">'+  ' </div>';
 
 		   			    htmlStr=htmlStr+ catcontainer;
+
+		   			    $('.catcontainer').addEventListner('click',(function(catcopy){
+
+		   			    	return function(){
+
+		   			    		catcopy.clicks +=1;
+
+		   			    	}
+
+		   			    })(cat));
 
 		   		});
 
