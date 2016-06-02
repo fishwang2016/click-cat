@@ -4,21 +4,19 @@
 		<link rel="stylesheet" href="style.css">
 		<script  src ="jquerymin.js"></script>
 
-		<script type="text/javascript" src="new.js"></script>
-
 	</head>
 
 	<body>
 
 		<div class="container">
 			<h2 data-bind ="text: name"></h2>
-			<div data-bind=""></div>
-			<img src="" alt="cute cat" data-bind="">
+			<div data-bind="text: clickCount"></div>
+			<img src="" alt="cute cat" data-bind="click: incrementCounter,attr: {src: imgSrc}">
 		
 
 		</div>
 
-		<script src = "knowckout-3.3.0.js"></script>
+		<script src = "knockout-3.3.0.js"></script>
 		<script src = "app.js"></script>
 
 		
