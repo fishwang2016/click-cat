@@ -4,21 +4,32 @@
 		<link rel="stylesheet" href="style.css">
 		<script  src ="jquerymin.js"></script>
 
-		<script type="text/javascript" src="new.js"></script>
-
 	</head>
 
 	<body>
+	   <ul data-bind="foreach:catList">
+	   	  <h2 data-bind ="text:name"></h2>
 
-		<div class="container">
-			<h2 data-bind ="text: name"></h2>
-			<div data-bind=""></div>
-			<img src="" alt="cute cat" data-bind="">
+	   	 <li > <img src="" alt="cute cat" data-bind="attr:{src:imgSrc}" /></li>
+
+	   </ul>
+			<div class="container" data-bind="with:currentCat()">
+					<div data-bind="text: title"></div>
+					<h2 data-bind ="text:name"></h2>
+					<div data-bind="text: clickCount"></div>
+
+					<img src="" alt="cute cat" data-bind="click: $parent.incrementCounter,attr: {src: imgSrc}">
+
+					<h3>Nicknames:</h3>
+					<ul data-bind="foreach: nicknames">
+						<li data-bind ="text: $data"></li>
+
+					</ul>
+
+				</div>
+
 		
-
-		</div>
-
-		<script src = "knowckout-3.3.0.js"></script>
+		<script src = "knockout-3.3.0.js"></script>
 		<script src = "app.js"></script>
 
 		
